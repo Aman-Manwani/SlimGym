@@ -1,9 +1,18 @@
+import Navbar from "@/scenes/navbar/Index";
+import {useState} from 'react'
+
+enum selectedPage{
+  Home = "home",
+  Benefits = "benefits",
+  OurClasses = "ourclasses",
+  ContactUs = "contactus",
+}
 
 function App() {
-
+  const [selectedPage,setSelectedPage] = useState<string>("Home");
   return (
-    <div className='app'>
-      app
+    <div className='app bg-gray-20'>
+      <Navbar selectedPage = {selectedPage} setSelectedPage = {setSelectedPage} />
     </div>
   )
 }
